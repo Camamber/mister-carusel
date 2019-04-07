@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		#serdtsa {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 625px;
+			background: #faf6fa;
+		}
+		.shirma {
+			top: 0;
+			left: 0;
+			position: absolute;
+			z-index: 2;
+			pointer-events: none;
+			width: 100vw;
+			height: 100vh;
+			background: url(shirma.png) top / 100% auto;
+		}
+		.slider {
+			margin: 75px 0;
+    		width: 500px;
+		}
+		.slide {
+			outline: none;
+		}
+		.slide img {
+			padding-left: 130px;
+			height: 100vh;
+		}
+		#left, #right {
+			cursor: pointer;
+			width: 60px;
+			height: 60px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-style: bold;
+			font-size: 30px;
+			color: white;
+			background: url("http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/heart-icon.png");
+			background-size: 60px 60px;
+
+		}
+
+		#left {
+			transform: rotate(90deg);
+		}
+		#right {
+			transform: rotate(-90deg);
+		}
+
+	</style>
+<div id="serdtsa">
+<!-- <div id="left" onmousedown="return false" onselectstart="return false">
+	</div> -->
+	<div>
+		<div class="slider">
+			<div class="slide">
+				<img src="1.png" alt="">
+			</div>
+			<div class="slide">
+				<img src="2.png" alt="">
+			</div>
+			<div class="slide">
+				<img src="3.png" alt="">
+			</div>	
+			<div class="slide">
+				<img src="4.png" alt="">
+			</div>
+			<div class="slide">
+				<img src="5.png" alt="">
+			</div>	
+			<div class="slide">
+				<img src="6.png" alt="">
+			</div>
+			<div class="slide">
+				<img src="7.png" alt="">
+			</div>
+		</div>
+		<div class="shirma" alt="">
+	</div>
+<!-- <div id="right" onmousedown="return false" onselectstart="return false">
+	</div> -->
+</div>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+
+	<script type="text/javascript">
+    $(document).ready(function(){
+     	$('.slider').slick({
+    		'autoplay':true,
+    		'arrows': false,
+    		'speed':1000,
+    	});
+      	
+       	$('#left').click(function(){
+       		$('.slider').slick('slickPrev');
+       	});
+
+       	$('#right').click(function(){
+       		$('.slider').slick('slickNext');
+       	});
+    });
+  </script>
+</body>
+</html>
